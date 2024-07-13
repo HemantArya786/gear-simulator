@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Webcam from "react-webcam";
+import "./App.css";
 
 export default function App() {
   const [geartNumber, setGearNumber] = useState("N");
@@ -17,16 +18,29 @@ export default function App() {
   console.log(clutchPress);
 
   return (
-    <main style={{ backgroundColor: "black" }}>
-      <h1 className="font-racing" style={{ color: "white", fontSize: "60px" }}>
-        Gear Simulator
-      </h1>
-      <div
-        className="App"
-        style={{ display: "flex", backgroundColor: "black" }}
-      >
+    <main className="main-div">
+      <div>
         <h1
-          style={{ color: "green", width: 50, textAlign: "center" }}
+          className="font-racing"
+          style={{ color: "white", fontSize: "60px", textAlign: "center" }}
+        >
+          Gear
+        </h1>
+        <h1
+          className="font-racing"
+          style={{ color: "red", fontSize: "60px", textAlign: "center" }}
+        >
+          Simulator
+        </h1>
+      </div>
+      <div className="App" style={{ display: "flex", flexDirection: "column" }}>
+        <h1
+          style={{
+            color: "green",
+            width: 50,
+            textAlign: "center",
+            fontSize: "60px",
+          }}
           className="font-orbi"
         >
           {geartNumber}
@@ -34,16 +48,19 @@ export default function App() {
 
         <div>
           <button
+            className="font-racing"
             onClick={() => {
               setClutchPress(!clutchPress);
             }}
             style={{
-              width: "100px",
+              width: "200px",
               height: "100px",
+              marginBottom: "50px",
+
               backgroundColor: clutchPress ? "red" : "green",
             }}
           >
-            clutch
+            Clutch
           </button>
         </div>
 
@@ -54,8 +71,8 @@ export default function App() {
               onClick={() => displayNumber(1)}
               className="font-orbi"
               style={{
-                width: "40px",
-                height: "40px",
+                width: "70px",
+                height: "70px",
                 borderRadius: " 50px",
                 color: geartNumber == 1 ? "black" : "white",
                 border: geartNumber == 1 ? "2px solid white " : "none",
@@ -69,8 +86,8 @@ export default function App() {
               onClick={() => displayNumber(3)}
               className="font-orbi"
               style={{
-                width: "40px",
-                height: "40px",
+                width: "70px",
+                height: "70px",
                 borderRadius: " 50px",
                 color: geartNumber == 3 ? "black" : "white",
                 border: geartNumber == 3 ? "2px solid white " : "none",
@@ -85,8 +102,8 @@ export default function App() {
               onClick={() => displayNumber("5")}
               className="font-orbi"
               style={{
-                width: "40px",
-                height: "40px",
+                width: "70px",
+                height: "70px",
                 borderRadius: " 50px",
                 color: geartNumber == 5 ? "black" : "white",
                 border: geartNumber == 5 ? "2px solid white " : "none",
@@ -166,8 +183,8 @@ export default function App() {
               onClick={() => displayNumber(2)}
               className="font-orbi"
               style={{
-                width: "40px",
-                height: "40px",
+                width: "70px",
+                height: "70px",
                 borderRadius: " 50px",
                 color: geartNumber == 2 ? "black" : "white",
                 border: geartNumber == 2 ? "2px solid white " : "none",
@@ -182,8 +199,8 @@ export default function App() {
               onClick={() => displayNumber("4")}
               className="font-orbi"
               style={{
-                width: "40px",
-                height: "40px",
+                width: "70px",
+                height: "70px",
                 borderRadius: " 50px",
                 color: geartNumber == 4 ? "black" : "white",
                 border: geartNumber == 4 ? "2px solid white " : "none",
@@ -197,8 +214,8 @@ export default function App() {
               onClick={() => displayNumber("R")}
               className="font-orbi"
               style={{
-                width: "40px",
-                height: "40px",
+                width: "70px",
+                height: "70px",
                 borderRadius: " 50px",
                 color: geartNumber == "R" ? "black" : "white",
                 border: geartNumber == "R" ? "2px solid white " : "none",
